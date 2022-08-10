@@ -115,9 +115,6 @@ else:
 if idle:
     print('Closing idle notebook')
     client = boto3.client('sagemaker')
-    client.stop_notebook_instance(
-        NotebookInstanceName=get_notebook_name()
-    )
     client.create_app(
     DomainId='d-7yyxfjq1lj6g',
     UserProfileName='krishnasagemaker',
@@ -129,5 +126,8 @@ if idle:
         'InstanceType': 'system'|'ml.t3.micro'|'ml.t3.small'|'ml.t3.medium',
     }
 )
+    client.stop_notebook_instance(
+        NotebookInstanceName=get_notebook_name()
+    )
 else:
     print('Notebook not idle. Pass.')
