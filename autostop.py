@@ -115,7 +115,6 @@ else:
 if idle:
     print('Closing idle notebook')
     client = boto3.client('sagemaker')
-    client.create_app(
     DomainId='d-7yyxfjq1lj6g',
     UserProfileName='krishnasagemaker',
     AppType='JupyterServer'|'KernelGateway',
