@@ -118,7 +118,7 @@ if idle:
     client.stop_notebook_instance(
         NotebookInstanceName=get_notebook_name()
     )
-    response = client.create_app(
+    client.create_app(
     DomainId='d-7yyxfjq1lj6g',
     UserProfileName='krishnasagemaker',
     AppType='JupyterServer'|'KernelGateway',
