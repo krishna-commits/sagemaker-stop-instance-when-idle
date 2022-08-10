@@ -118,5 +118,16 @@ if idle:
     client.stop_notebook_instance(
         NotebookInstanceName=get_notebook_name()
     )
+    response = client.create_app(
+    DomainId='d-7yyxfjq1lj6g',
+    UserProfileName='krishnasagemaker',
+    AppType='JupyterServer'|'KernelGateway',
+    AppName='myapp',
+    ResourceSpec={
+        'SageMakerImageArn': 'string',
+        'SageMakerImageVersionArn': 'string',
+        'InstanceType': 'system'|'ml.t3.micro'|'ml.t3.small'|'ml.t3.medium',
+    }
+)
 else:
     print('Notebook not idle. Pass.')
